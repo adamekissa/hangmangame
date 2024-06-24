@@ -4,11 +4,13 @@ import Button from './components/Button'
 
 function App() {
   const [count, setCount] = useState(0)
+  const hiddenWord = ["a", "l", "w", "a", "y", "s"]
 
   return (
     <>
       <div>
-        <h3>Welcome to the hangman game</h3>
+        <h2>Welcome to the hangman game</h2>
+        <h3>{hiddenWord.map(element => "_ ")}</h3>
 
         <div className='button--div'>
           <Button text="a" />
