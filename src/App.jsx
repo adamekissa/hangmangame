@@ -3,20 +3,31 @@ import './App.css'
 import Button from './components/Button'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const hiddenWord = ["a", "l", "w", "a", "y", "s"]
+  const [buttonText, setButtonText] = useState("");
+  const [count, setCount] = useState(0);
+  const hiddenWord = ["a", "l", "w", "a", "y", "s"];
+
+  function getClickedText() {
+    document.getElementById('textButton').addEventListener('click', e => {
+      setButtonText(e.target.innerText);
+      // alert(e.target.innerText)
+    })
+    // e.target.disabled = true;
+    console.log(buttonText);
+  }
 
   return (
     <>
       <div>
         <h2>Welcome to the hangman game</h2>
+        <p>{buttonText}</p>
         <h3>{hiddenWord.map(element => "_ ")}</h3>
-
+        <p>NUmber of misses: 0</p>
         <div className='button--div'>
-          <Button text="a" />
-          <Button text="b" />
-          <Button text="c" />
-          <Button text="d" />
+          <Button callBackFn={getClickedText} text="a" idc="textButton" />
+          <Button callBackFn={getClickedText} text="b" idc="textButton" />
+          <Button callBackFn={getClickedText} text="c" idc="textButton" />
+          <Button callBackFn={getClickedText} text="d" idc="textButton" />
           <Button text="e" />
           <Button text="f" />
           <Button text="g" />

@@ -1,5 +1,5 @@
 export default function Button(props) {
     return (
-        <button className="alphabet--button" >{props.text}</button>
+        <button onClick={props.callBackFn} id={props.idc} className="alphabet--button" >{props.text}</button>
     )
 }
