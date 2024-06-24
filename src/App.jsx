@@ -8,12 +8,6 @@ function App() {
   const hiddenWord = ["a", "l", "w", "a", "y", "s"];
 
   function getClickedText() {
-    // document.getElementById('textButton').addEventListener('click', e => {
-    //   setButtonText(e.target.innerText);
-    //   // alert(e.target.innerText)
-    // })
-    // // e.target.disabled = true;
-    // console.log(buttonText);
     document.addEventListener('click', e => {
       e.target.disabled = true;
       setButtonText(e.target.innerText);
