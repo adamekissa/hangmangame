@@ -26,28 +26,28 @@ function App() {
           <Button callBackFn={getClickedText} text="b" />
           <Button callBackFn={getClickedText} text="c" />
           <Button callBackFn={getClickedText} text="d" />
-          <Button text="e" />
-          <Button text="f" />
-          <Button text="g" />
-          <Button text="h" />
-          <Button text="i" />
-          <Button text="j" />
-          <Button text="k" />
-          <Button text="l" />
-          <Button text="m" />
-          <Button text="n" />
-          <Button text="o" />
-          <Button text="p" />
-          <Button text="q" />
-          <Button text="r" />
-          <Button text="s" />
-          <Button text="t" />
-          <Button text="u" />
-          <Button text="v" />
-          <Button text="w" />
-          <Button text="x" />
-          <Button text="y" />
-          <Button text="z" />
+          <Button callBackFn={getClickedText} text="e" />
+          <Button callBackFn={getClickedText} text="f" />
+          <Button callBackFn={getClickedText} text="g" />
+          <Button callBackFn={getClickedText} text="h" />
+          <Button callBackFn={getClickedText} text="i" />
+          <Button callBackFn={getClickedText} text="j" />
+          <Button callBackFn={getClickedText} text="k" />
+          <Button callBackFn={getClickedText} text="l" />
+          <Button callBackFn={getClickedText} text="m" />
+          <Button callBackFn={getClickedText} text="n" />
+          <Button callBackFn={getClickedText} text="o" />
+          <Button callBackFn={getClickedText} text="p" />
+          <Button callBackFn={getClickedText} text="q" />
+          <Button callBackFn={getClickedText} text="r" />
+          <Button callBackFn={getClickedText} text="s" />
+          <Button callBackFn={getClickedText} text="t" />
+          <Button callBackFn={getClickedText} text="u" />
+          <Button callBackFn={getClickedText} text="v" />
+          <Button callBackFn={getClickedText} text="w" />
+          <Button callBackFn={getClickedText} text="x" />
+          <Button callBackFn={getClickedText} text="y" />
+          <Button callBackFn={getClickedText} text="z" />
         </div>
       </div>
     </>
