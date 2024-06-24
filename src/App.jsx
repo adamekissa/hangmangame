@@ -8,12 +8,16 @@ function App() {
   const hiddenWord = ["a", "l", "w", "a", "y", "s"];
 
   function getClickedText() {
-    document.getElementById('textButton').addEventListener('click', e => {
+    // document.getElementById('textButton').addEventListener('click', e => {
+    //   setButtonText(e.target.innerText);
+    //   // alert(e.target.innerText)
+    // })
+    // // e.target.disabled = true;
+    // console.log(buttonText);
+    document.addEventListener('click', e => {
+      e.target.disabled = true;
       setButtonText(e.target.innerText);
-      // alert(e.target.innerText)
     })
-    // e.target.disabled = true;
-    console.log(buttonText);
   }
 
   return (
@@ -24,10 +28,10 @@ function App() {
         <h3>{hiddenWord.map(element => "_ ")}</h3>
         <p>NUmber of misses: 0</p>
         <div className='button--div'>
-          <Button callBackFn={getClickedText} text="a" idc="textButton" />
-          <Button callBackFn={getClickedText} text="b" idc="textButton" />
-          <Button callBackFn={getClickedText} text="c" idc="textButton" />
-          <Button callBackFn={getClickedText} text="d" idc="textButton" />
+          <Button callBackFn={getClickedText} text="a" />
+          <Button callBackFn={getClickedText} text="b" />
+          <Button callBackFn={getClickedText} text="c" />
+          <Button callBackFn={getClickedText} text="d" />
           <Button text="e" />
           <Button text="f" />
           <Button text="g" />
