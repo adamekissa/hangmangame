@@ -1,16 +1,33 @@
 import { useState } from 'react'
 import './App.css'
 import Button from './components/Button'
+import { words } from './Data/Data';
 
 function App() {
   const [buttonText, setButtonText] = useState("");
-  const [count, setCount] = useState(0);
-  const hiddenWord = ["a", "l", "w", "a", "y", "s"];
+  const [missCount, setMissCount] = useState(0);
+
+  const randomNum = Math.floor(Math.random() * words.length);
+  const theWord = words[randomNum];
+
+  const okyy = generateHangmanDisplayLetters(buttonText, "apple");
+
+  function generateHangmanDisplayLetters(guessedLetters, wordToGuess) {
+    const displayLetters = [];
+    for (const letter of wordToGuess) {
+      if (guessedLetters.includes(letter)) {
+        displayLetters.push(letter);
+      } else {
+        displayLetters.push("_ ");
+      }
+    }
+    return displayLetters;
+  }
 
   function getClickedText() {
     document.addEventListener('click', e => {
       e.target.disabled = true;
-      setButtonText(e.target.innerText);
+      setButtonText([...buttonText, e.target.innerText]);
     })
   }
 
@@ -18,9 +35,8 @@ function App() {
     <>
       <div>
         <h2>Welcome to the hangman game</h2>
-        <p>{buttonText}</p>
-        <h3>{hiddenWord.map(element => "_ ")}</h3>
-        <p>NUmber of misses: 0</p>
+        <h3>{okyy}</h3>
+        <p>NUmber of misses: {missCount}</p>
         <div className='button--div'>
           <Button callBackFn={getClickedText} text="a" />
           <Button callBackFn={getClickedText} text="b" />
