@@ -52,6 +52,7 @@
   border: 3px solid blue;
   padding: 10px;
   background-color: blue;
+  border-radius: 0.5cm
 }
 
 .alphabet--button {

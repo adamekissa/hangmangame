@@ -74,7 +74,7 @@ function App() {
           <Button callBackFn={getClickedText} text="y" />
           <Button callBackFn={getClickedText} text="z" />
         </div>
-        <Button callBackFn={freshGame} text="New Game" />
+        <button onClick={freshGame} style={{ margin: 5 }} className="alphabet--button">New Game</button>
       </div>
     </>
   )
