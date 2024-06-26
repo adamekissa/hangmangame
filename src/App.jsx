@@ -7,9 +7,6 @@ function App() {
   const [buttonText, setButtonText] = useState("");
   const [missCount, setMissCount] = useState(0);
   const [theWord, setTheWord] = useState(words[Math.floor(Math.random() * words.length)]);
-  const [checkText, setCheckText] = useState("");
-
-
   const guessDisplay = generateHangmanDisplayLetters(buttonText, theWord);
 
   function generateHangmanDisplayLetters(guessedLetters, wordToGuess) {
@@ -31,7 +28,15 @@ function App() {
       if (!theWord.includes(e.target.innerText)) {
         setMissCount(missCount + 1);
       }
+      if (missCount === 10) {
+        alert("You lose!");
+        location.reload();
+      }
     })
+  }
+
+  function freshGame() {
+    location.reload();
   }
 
 
@@ -69,6 +74,7 @@ function App() {
           <Button callBackFn={getClickedText} text="y" />
           <Button callBackFn={getClickedText} text="z" />
         </div>
+        <Button callBackFn={freshGame} text="New Game" />
       </div>
     </>
   )
