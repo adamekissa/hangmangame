@@ -6,11 +6,12 @@ import { words } from './Data/Data';
 function App() {
   const [buttonText, setButtonText] = useState("");
   const [missCount, setMissCount] = useState(0);
+  const [theWord, setTheWord] = useState(words[Math.floor(Math.random() * words.length)])
 
-  const randomNum = Math.floor(Math.random() * words.length);
-  const theWord = words[randomNum];
+  // const randomNum = Math.floor(Math.random() * words.length);
+  // const theWord = words[randomNum];
 
-  const okyy = generateHangmanDisplayLetters(buttonText, "apple");
+  const okyy = generateHangmanDisplayLetters(buttonText, theWord);
 
   function generateHangmanDisplayLetters(guessedLetters, wordToGuess) {
     const displayLetters = [];
