@@ -6,12 +6,11 @@ import { words } from './Data/Data';
 function App() {
   const [buttonText, setButtonText] = useState("");
   const [missCount, setMissCount] = useState(0);
-  const [theWord, setTheWord] = useState(words[Math.floor(Math.random() * words.length)])
+  const [theWord, setTheWord] = useState(words[Math.floor(Math.random() * words.length)]);
+  const [checkText, setCheckText] = useState("");
 
-  // const randomNum = Math.floor(Math.random() * words.length);
-  // const theWord = words[randomNum];
 
-  const okyy = generateHangmanDisplayLetters(buttonText, theWord);
+  const guessDisplay = generateHangmanDisplayLetters(buttonText, theWord);
 
   function generateHangmanDisplayLetters(guessedLetters, wordToGuess) {
     const displayLetters = [];
@@ -29,14 +28,18 @@ function App() {
     document.addEventListener('click', e => {
       e.target.disabled = true;
       setButtonText([...buttonText, e.target.innerText]);
+      if (!theWord.includes(e.target.innerText)) {
+        setMissCount(missCount + 1);
+      }
     })
   }
+
 
   return (
     <>
       <div>
         <h2>Welcome to the hangman game</h2>
-        <h3>{okyy}</h3>
+        <h3>{guessDisplay}</h3>
         <p>NUmber of misses: {missCount}</p>
         <div className='button--div'>
           <Button callBackFn={getClickedText} text="a" />
